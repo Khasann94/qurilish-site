@@ -30,7 +30,7 @@ public class HomePagePhotoService {
 
     public void addPhoto(HomePage page, MultipartFile[] files) {
         for (MultipartFile file : files) {
-            com.virtual.docflow_service.dto.FileDto fileDto = UtilComponents.saveFile(file, "homePage", uploadPathService, file.getOriginalFilename());
+            com.dto.FileDto fileDto = UtilComponents.saveFile(file, "homePage", uploadPathService, file.getOriginalFilename());
             HomePagePhoto photo = new HomePagePhoto();
             photo.setHomePage(page);
             photo.setPhotoName(fileDto.getFilename());
