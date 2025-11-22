@@ -2,7 +2,7 @@ package com.util;
 
 import com.exception.RecordNotFoundException;
 import com.service.UploadPathService;
-import com.virtual.docflow_service.dto.FileDto;
+import com.dto.FileDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;

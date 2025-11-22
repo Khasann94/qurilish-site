@@ -1,4 +1,4 @@
-package com.virtual.docflow_service.dto;
+package com.dto;
 
 import lombok.*;
 
