@@ -1,14 +1,13 @@
 package com.util;
 
+import com.dto.FileDto;
 import com.exception.RecordNotFoundException;
 import com.service.UploadPathService;
-import com.dto.FileDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.text.RandomStringGenerator;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,10 +22,6 @@ import java.util.Map;
 @Component
 public class UtilComponents {
 
-
-    public static String emptyToNull(String value) {
-        return (value == null || value.trim().isEmpty()) ? null : value;
-    }
 
     public static FileDto saveFile(MultipartFile file, String folder, UploadPathService uploadPathService, String filename) {
         if (file == null || !StringUtils.hasText(file.getOriginalFilename()))
@@ -51,11 +46,6 @@ public class UtilComponents {
         }
         assert storeFile != null;
         return FileDto.builder().filename(fileName + "." + fileExtension).size(file.getSize()).extension(fileExtension).modifiedName(modifiedFileName).uploadPath("/images/" + url + "/" + modifiedFileName).absolutePath(storeFile.getAbsolutePath()).build();
-    }
-
-
-    public static PageRequest paginationToPageRequest(Pagination pagination) {
-        return PageRequest.of(pagination.getPage(), pagination.getLimit());
     }
 
 
