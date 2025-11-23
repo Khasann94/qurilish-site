@@ -29,6 +29,7 @@ public class SecurityConfig {
             "/api/v.1/language/list-all",
             "/api/v.1/certificate/list",
             "/api/v.1/document-file/list",
+            "/api/v.1/request-application/send",
             "/api/v.1/auth-refresh",
             "/configuration/com.security",
             "/webjars/**",
